@@ -46,7 +46,7 @@ AFRAME.registerComponent('clickhan22dler', {
 
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
-        device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: true" loading-screen="enabled:false"
+        device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
@@ -57,7 +57,7 @@ AFRAME.registerComponent('clickhan22dler', {
             <img id="my-image2"src="2.png">
         </a-assets>
         
-          <a-image clickhan22dler src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="false" height="0.2" width="0.6">
+          <a-image clickhan22dler src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="true" height="0.2" width="0.6">
         </a-image>
         
         
