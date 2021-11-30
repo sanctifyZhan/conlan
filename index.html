@@ -208,8 +208,9 @@
         
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
+                 let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
-                    let imageTrue = document.getElementsByTagName("a-image")[0];
+                  
                    
                     imageTrue.setAttribute('visible', true);
                   
