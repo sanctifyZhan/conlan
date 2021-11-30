@@ -47,6 +47,7 @@
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
         </a-marker>
+        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
         <a-entity camera position="0 0 1"></a-entity>
        
          <a-assets>
@@ -55,6 +56,9 @@
         
           <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="true" height="0.2" width="0.6">
         </a-image>
+            
+             <a-video id="aVideoHide" src="#vid" position="-2 -1 1.5" visible="false" rotation="-90 0 0" height="7px" width="7px"
+                material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         
         
     </a-scene>
@@ -67,7 +71,9 @@
           var scene = document.querySelector('#containermusic');
  
         scene.addEventListener("click", function (e) {
-         console.log("chien console" );
+          let video = document.getElementById("vid");
+            video.setAttribute('visible', true);
+            video.play();
             alert("chien");
              
         });
