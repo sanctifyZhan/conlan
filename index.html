@@ -205,12 +205,16 @@
 
     <script>
         
-          AFRAME.registerComponent('clickhandler', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked!')
-            });
-    }});
+//           AFRAME.registerComponent('clickhandler', {
+//         init: function() {
+//             this.el.addEventListener('click', () => {
+//                 alert('Clicked!')
+//             });
+//     }});
+        
+        var playthisvid_1 = document.querySelector('#aimage2');
+
+    playthisvid_1.addEventListener('click', () => { console.log("it clicks");  })
         
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
