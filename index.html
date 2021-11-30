@@ -27,8 +27,10 @@
     
     <script>
 AFRAME.registerComponent('clickhandler', {
+   
     init: function () {
-         this.el.addEventListener('click', function (evt) {
+        const animatedMarker = document.querySelector("#animated-marker");
+         animatedMarker.addEventListener('click', function (evt) {
         console.log('I was clicked 99 at: ', evt.detail.intersection.point);
             
       });
@@ -51,7 +53,7 @@ AFRAME.registerComponent('clickhandler', {
             <img id="my-image2"src="2.png">
         </a-assets>
         
-          <a-image clickhandler='' src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="false" height="0.2" width="0.6">
+          <a-image id="animated-marker" clickhandler='' src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
         
         
