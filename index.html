@@ -26,22 +26,14 @@
     </style>
 </head>
     
-    <script>
-
-AFRAME.registerComponent('clickhan22dler', {
-        schema: {
-          txt: {default:'default'}
-        },        
-        init: function () {
-          var data = this.data;
-          var el = this.el;        
-          el.addEventListener('click', function () {            
-           console.log(data.txt);
-          });        
-        }
-      });
-
-        
+<script>
+    AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!');
+                console.log(chien ok);
+            });
+    }});
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -57,7 +49,7 @@ AFRAME.registerComponent('clickhan22dler', {
             <img id="my-image2"src="2.png">
         </a-assets>
         
-          <a-image clickhan22dler src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="true" height="0.2" width="0.6">
+          <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="true" height="0.2" width="0.6">
         </a-image>
         
         
