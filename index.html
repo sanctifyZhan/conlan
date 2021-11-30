@@ -1,9 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <!-- con lan Global site tag (gtag.js) - Google Analytics -->
-   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
     <meta charset="utf-8">
     <meta name="viewport"
@@ -22,25 +21,119 @@
 
     <style>
         /* Bg for each style show when click submit overlay1-6 */
+        .overlay1 {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ffffff;
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
 
-        * {
-        /* Reset browser's padding and margin */
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .container {
-        margin: 100px;
-      }
+        .overlay2 {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background-image: url("backgroundWhile.PNG");*/
+            background-color: #b0c4de;
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
 
-      .my-button {
-        width: 200px;
-        height: 200px;
-        outline-style:initial;
-        border-radius: 100px;
-        cursor: pointer;
-      }
-        
+        .overlay3 {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background-image: url("backgroundWhile.PNG");*/
+            background-color: #000080;
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
+        .overlay4 {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background-image: url("backgroundWhile.PNG");*/
+            background-color: #323264;
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
+        .overlay5 {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background-image: url("backgroundWhile.PNG");*/
+            background-color: #191970;
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
+        .overlay6 {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background-image: url("backgroundWhile.PNG");*/
+            background-color: #826b41;
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
         .ui {
             position: absolute;
             z-index: 100;
@@ -89,78 +182,127 @@
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
-        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
+        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted >
         </video>
         <a-marker type='pattern' url='patter.patt' markerhandler>
-            <div class="container ui" id="container">
-                <button id="take-photo" class="my-button">Button</button>
-              </div>
-        
+
+            <a-image id="my-image" src="#my-image" position="0 0 -0.45" scale="1 1 1" visible="false" height="0.9"
+                width="1.2">
+            </a-image>
+
+            <a-video id="aVideoHide" src="#vid" position="-9 9 9" rotation="-90 0 0" height="6px" width="6px"
+                material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
         <a-entity camera position="0 0 1"></a-entity>
         <a-assets>
-            <img id="my-image">
+            <img id="my-image"src="2.png">
         </a-assets>
-        <a-image id="my-image" src="#my-image" position="0 0 -0.45" scale="1 1 1" visible="false" height="0.9"
-            width="1.2">
-        </a-image>
+
     </a-scene>
 
-    <!-- <div class="ui" id="container">
-        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-    </div> -->
-
-    <!-- <div class="container ui" id="container">
-        <button id="take-photo" class="my-button">Button</button>
-      </div> -->
 
     <script>
-        $('#container').hide();
-        AFRAME.registerComponent('markerhandler', {
-            tick: function () {
-                if (document.querySelector("a-marker").object3D.visible == true) {
-                    let video = document.getElementById("vid");
-                    video.play();
-                    let vi = document.querySelector("#aVideoHide");
-                    setTimeout(function () {
-                        vi.setAttribute('position', '0 0 1.7');
-                    }, 800);
-                    setTimeout(function () {
-                        $('#container').fadeIn();
-                    }, 18000);
-                } else if (document.querySelector("a-marker").object3D.visible == false) {
-                    let video = document.getElementById("vid");
-                    video.pause();
-                }
-            }
-        });
+        // $('#container').hide();
+        // AFRAME.registerComponent('markerhandler', {
+        //     tick: function () {
+        //         if (document.querySelector("a-marker").object3D.visible == true) {
+        //             let video = document.getElementById("vid");
+        //             video.play();
+        //             let vi = document.querySelector("#aVideoHide");
+        //             setTimeout(function () {
+        //                 vi.setAttribute('position', '0 0 1.7');
+        //             }, 800);
+        //             setTimeout(function () {
+        //                 $('#container').fadeIn();
+        //             }, 18000);
+        //         } else if (document.querySelector("a-marker").object3D.visible == false) {
+        //             let video = document.getElementById("vid");
+        //             video.pause();
+        //         }
+        //     }
+        // });
 
-        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+        // document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
 
-        function yourFunction(e) {
-            $('#container').fadeIn();
-        }
-        //declare variables and initialize
+        // function yourFunction(e) {
+           
+        //     choosePic();
+        //     //$('#container').fadeIn();
+        // }
+        // //declare variables and initialize
 
-        let audio = new Audio('captureSound.mp3');
-        let sceneElement = document.querySelector("a-scene");
-        let take_photo_btn = document.querySelector('#take-photo');
-        $('#container').hide();
+        // let audio = new Audio('captureSound.mp3');
+        // let sceneElement = document.querySelector("a-scene");
+        // let take_photo_btn = document.querySelector('#take-photo');
+        // let myPix = new Array("Assets/01.jpg", "Assets/02.jpg", "Assets/03.jpg", "Assets/04.jpg", "Assets/05.jpg", "Assets/06.jpg", "Assets/07.jpg", "Assets/08.jpg", "Assets/09.jpg", "Assets/10.jpg", "Assets/11.jpg", "Assets/12.jpg");
+        // $('#container').hide();
 
-        //event click button capture
-        take_photo_btn.addEventListener("click", function (e) {
-            let imageTrue = document.getElementsByTagName("a-image")[0];
-            let myEl = document.querySelector("#aVideoHide");
-            audio.play();
-            imageTrue.setAttribute('visible', true);
-          
-            e.preventDefault();
-            myEl.setAttribute("visible", "false");
-            var myobj = document.getElementById("container");
-            myobj.remove();
-        });
+        // let imageTruechup = document.getElementsByTagName("a-image")[0];
+        // imageTruechup.addEventListener("click", function (e) {
+        //     let imageTrue = document.getElementsByTagName("a-image")[0];
+        //     let myEl = document.querySelector("#aVideoHide");
+        //     audio.play();
+        //     imageTrue.setAttribute('visible', true);
+        //     choosePic();
+        //     e.preventDefault();
+        //     myEl.setAttribute("visible", "false");
+        //     var myobj = document.getElementById("container");
+        //     myobj.remove();
+        // });
 
-      
+        // //event click button capture
+        // take_photo_btn.addEventListener("click", function (e) {
+        //     let imageTrue = document.getElementsByTagName("a-image")[0];
+        //     let myEl = document.querySelector("#aVideoHide");
+        //     audio.play();
+        //     imageTrue.setAttribute('visible', true);
+        //     choosePic();
+        //     e.preventDefault();
+        //     myEl.setAttribute("visible", "false");
+        //     var myobj = document.getElementById("container");
+        //     myobj.remove();
+        // });
+
+        // function choosePic() {
+        //     let randomNum = Math.floor(Math.random() * myPix.length);
+        //     document.getElementById("my-image").src = myPix[randomNum];
+        //     if (randomNum == 0) {
+        //         sceneElement.classList.add("overlay1");
+        //     }
+        //     else if (randomNum == 1) {
+        //         sceneElement.classList.add("overlay1");
+        //     }
+        //     else if (randomNum == 2) {
+        //         sceneElement.classList.add("overlay2");
+        //     }
+        //     else if (randomNum == 3) {
+        //         sceneElement.classList.add("overlay3");
+        //     }
+        //     else if (randomNum == 4) {
+        //         sceneElement.classList.add("overlay4");
+        //     }
+        //     else if (randomNum == 5) {
+        //         sceneElement.classList.add("overlay5");
+        //     }
+        //     else if (randomNum == 6) {
+        //         sceneElement.classList.add("overlay5");
+        //     }
+        //     else if (randomNum == 7) {
+        //         sceneElement.classList.add("overlay4");
+        //     }
+        //     else if (randomNum == 8) {
+        //         sceneElement.classList.add("overlay3");
+        //     }
+        //     else if (randomNum == 9) {
+        //         sceneElement.classList.add("overlay2");
+        //     }
+        //     else if (randomNum == 10) {
+        //         sceneElement.classList.add("overlay1");
+        //     }
+        //     else if (randomNum == 11) {
+        //         sceneElement.classList.add("overlay1");
+        //     }
+        // }
 
     </script>
 </body>
