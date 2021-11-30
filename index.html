@@ -44,10 +44,14 @@
     <a-scene embedded="true" arjs='debugUIEnabled:false; trackingMethod: best;'
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
+        
+         <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
+        </video>
+        
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
         </a-marker>
-        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
+        
         <a-entity camera position="0 0 1"></a-entity>
        
          <a-assets>
