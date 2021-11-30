@@ -28,13 +28,12 @@
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
-        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted >
-        </video>   
+   
         
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
         </a-marker>
-        <a-entity camera position="0 0 0"></a-entity>
+        <a-entity camera position="0 0 1"></a-entity>
        
          <a-assets>
             <img id="my-image2"src="2.png">
@@ -71,7 +70,7 @@
             }
         });
         
-         let audio = new Audio('captureSound.mp3');
+     //    let audio = new Audio('captureSound.mp3');
       //  let imageTruechup = document.getElementsByTagName("a-image")[0];
         // imageTruechup.addEventListener("click", function (e) {
         //     let imageTrue = document.getElementsByTagName("a-image")[0];
