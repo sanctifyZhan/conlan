@@ -31,13 +31,14 @@
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Clicked!');
-                console.log("chien ok");
-            });
+              });
     }});
 </script>
+    
+
 
 <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+    <a-scene embedded="true" arjs='debugUIEnabled:false; trackingMethod: best;'
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
         <a-marker type='pattern' url='patter.patt' markerhandler>
