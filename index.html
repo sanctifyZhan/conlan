@@ -183,11 +183,7 @@
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
         <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted >
-        </video>
-        
-         <a-assets>
-            <img id="my-image2"src="2.png">
-        </a-assets>
+        </video>   
         
         <a-marker type='pattern' url='patter.patt' markerhandler>
 
@@ -198,6 +194,9 @@
         </a-marker>
         <a-entity camera position="0 0 1"></a-entity>
        
+         <a-assets>
+            <img id="my-image2"src="2.png">
+        </a-assets>
           <a-image src="#my-image2" id="aimage2" position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image> 
       
@@ -212,7 +211,7 @@
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     let imageTrue = document.getElementsByTagName("a-image")[0];
                    
-                    imageTrue.setAttribute('visible', false);
+                    imageTrue.setAttribute('visible', true);
                   
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                    
