@@ -197,6 +197,7 @@
          <a-assets>
             <img id="my-image2"src="2.png">
         </a-assets>
+        
           <a-image src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image> 
       
@@ -210,13 +211,8 @@
             tick: function () {
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
-                  
-                   
                     imageTrue.setAttribute('visible', true);
-                  
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
-                   
-                   
                     imageTrue.setAttribute('visible', false);
                 }
             }
@@ -228,6 +224,7 @@
         //     let imageTrue = document.getElementsByTagName("a-image")[0];
         //     let myEl = document.querySelector("#aVideoHide");
              audio.play();
+             alert("asd");
         //     imageTrue.setAttribute('visible', true);
         //     choosePic();
         //     e.preventDefault();
