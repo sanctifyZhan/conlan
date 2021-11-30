@@ -205,6 +205,13 @@
 
     <script>
         
+          AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
+        
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
                  let imageTrue = document.getElementsByTagName("a-image")[0];
