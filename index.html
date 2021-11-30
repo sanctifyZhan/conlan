@@ -20,161 +20,7 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
-        /* Bg for each style show when click submit overlay1-6 */
-        .overlay1 {
-            position: fixed;
-            /* Sit on top of the page content */
-            width: 100%;
-            /* Full width (cover the whole page) */
-            height: 100%;
-            /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ffffff;
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer;
-            /* Add a pointer on hover */
-        }
-
-        .overlay2 {
-            position: fixed;
-            /* Sit on top of the page content */
-            width: 100%;
-            /* Full width (cover the whole page) */
-            height: 100%;
-            /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /*background-image: url("backgroundWhile.PNG");*/
-            background-color: #b0c4de;
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer;
-            /* Add a pointer on hover */
-        }
-
-        .overlay3 {
-            position: fixed;
-            /* Sit on top of the page content */
-            width: 100%;
-            /* Full width (cover the whole page) */
-            height: 100%;
-            /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /*background-image: url("backgroundWhile.PNG");*/
-            background-color: #000080;
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer;
-            /* Add a pointer on hover */
-        }
-
-        .overlay4 {
-            position: fixed;
-            /* Sit on top of the page content */
-            width: 100%;
-            /* Full width (cover the whole page) */
-            height: 100%;
-            /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /*background-image: url("backgroundWhile.PNG");*/
-            background-color: #323264;
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer;
-            /* Add a pointer on hover */
-        }
-
-        .overlay5 {
-            position: fixed;
-            /* Sit on top of the page content */
-            width: 100%;
-            /* Full width (cover the whole page) */
-            height: 100%;
-            /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /*background-image: url("backgroundWhile.PNG");*/
-            background-color: #191970;
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer;
-            /* Add a pointer on hover */
-        }
-
-        .overlay6 {
-            position: fixed;
-            /* Sit on top of the page content */
-            width: 100%;
-            /* Full width (cover the whole page) */
-            height: 100%;
-            /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /*background-image: url("backgroundWhile.PNG");*/
-            background-color: #826b41;
-            z-index: 2;
-            /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer;
-            /* Add a pointer on hover */
-        }
-
-        .ui {
-            position: absolute;
-            z-index: 100;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10px 15px 30px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .ui a {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background-color: #ffffff;
-            line-height: 100%;
-            color: #303030;
-            margin: 10px 3px;
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .ui a i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .ui a:active {
-            color: #ff0000;
-        }
-
-        .ui a.disabled {
-            pointer-events: none;
-            color: #cccccc;
-        }
+      
     </style>
 </head>
 
@@ -186,11 +32,9 @@
         </video>   
         
         <a-marker type='pattern' url='patter.patt' markerhandler>
-
-             
-
+            
         </a-marker>
-        <a-entity camera position="0 0 1"></a-entity>
+        <a-entity camera position="0 0 0"></a-entity>
        
          <a-assets>
             <img id="my-image2"src="2.png">
@@ -205,16 +49,16 @@
 
     <script>
         
-//           AFRAME.registerComponent('clickhandler', {
-//         init: function() {
-//             this.el.addEventListener('click', () => {
-//                 alert('Clicked!')
-//             });
-//     }});
+          AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
         
-        var playthisvid_1 = document.querySelector('#aimage2');
+       // var playthisvid_1 = document.querySelector('#aimage2');
 
-    playthisvid_1.addEventListener('click', () => { console.log("it clicks");  })
+       // playthisvid_1.addEventListener('click', () => { console.log("it clicks");  })
         
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
@@ -228,19 +72,19 @@
         });
         
          let audio = new Audio('captureSound.mp3');
-        let imageTruechup = document.getElementsByTagName("a-image")[0];
-         imageTruechup.addEventListener("click", function (e) {
+      //  let imageTruechup = document.getElementsByTagName("a-image")[0];
+        // imageTruechup.addEventListener("click", function (e) {
         //     let imageTrue = document.getElementsByTagName("a-image")[0];
         //     let myEl = document.querySelector("#aVideoHide");
-             audio.play();
-             alert("asd");
+      //       audio.play();
+        //     alert("asd");
         //     imageTrue.setAttribute('visible', true);
         //     choosePic();
         //     e.preventDefault();
         //     myEl.setAttribute("visible", "false");
         //     var myobj = document.getElementById("container");
         //     myobj.remove();
-         });
+     //    });
         
         
         //visible="false" 
