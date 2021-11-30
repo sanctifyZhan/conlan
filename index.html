@@ -19,7 +19,7 @@
 
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js'></script>
-
+    
     <style>
       
     </style>
@@ -30,6 +30,7 @@ AFRAME.registerComponent('clickhandler', {
     init: function () {
          this.el.addEventListener('click', function (evt) {
         console.log('I was clicked at: ', evt.detail.intersection.point);
+             alert("drtyu");
       });
     }
   });
