@@ -1,54 +1,53 @@
- <!DOCTYPE html>
+
+
 <html>
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<head>
+	  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	  <script
+		src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+	  <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+	  <script src="https://unpkg.com/aframe-gradient-sky@1.2.0/dist/gradientsky.min.js"></script>
+	  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+	  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+	  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+	  <script
+		src="https://rawcdn.githack.com/elbobo/aframe-animation-toggle-component/7ef92afbc8b16ad34c1689945ff9f46c570be2d6/dist/aframe-animation-toggle-component.js"></script>
+	  <script src="https://www.lokeldigital.com/shared-code/a-frame/onclick.js"></script>
+	  <script
+		src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+	  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+	
+	  <script
+		src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+	
+	
+	
+	
+	  <!-- Component (includes A-Frame core) -->
+	
+	
+	
+	
+	
+	</head>
+	
+	<body>
+	  <a-scene cursor="rayOrigin: mouse" raycaster="objects: .clickable" renderer="colorManagement: true;" embedded
+		arjs='debugUIEnabled:false; trackingMethod: best;' device-orientation-permission-ui="enabled: false"
+		vr-mode-ui="enabled: false" loading-screen="enabled:false" precision: mediump>
+	
 
-    <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  
-
-    
-    <style>
-       .uimusic {
-        position: absolute;
-        z-index: 100;
-        top: 80%;
-        right: 4%;
-        width: 90%;
-        height: 18%;
-       
-        box-sizing: border-box;
-          
-    }
-    </style>
-</head>
-    
-
-    
-
-<body>
-		<a-scene shadow="type: pcfsoft">
-			
-			<!-- Camera -->
-			<a-entity id="rig" position="0 1.6 0">
-				
-			</a-entity>
-			<a-entity position="1.5 1.5 3" scale=".5 .5 .5" fbx-model="src: 1M_BOX_ANI.fbx;" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
-		</a-scene>
+    <a-entity position="-0.7 0 -5.5" scale=".5 .5 .5" fbx-model="src: 1M_BOX_ANI.fbx;" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
+	
+	
+	
+    <a-entity camera position="0 0 0"></a-entity>
+		  
+	
+		</a-entity>
+	
+	  </a-scene>
 	</body>
-
-</html>
- 
-
-</html>
- 
+	
+	</html>
