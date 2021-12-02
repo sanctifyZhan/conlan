@@ -49,9 +49,6 @@
         
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
-		 
-		
-		
 		
         </a-marker>
 	    
@@ -80,12 +77,12 @@
       
         
           var scene = document.querySelector('#containermusic');
-	  var fbxx = document.querySelector('#idfbx');
+	  
         scene.addEventListener("click", function (e) {
           let myEl = document.querySelector("#aimage2");
             myEl.setAttribute("visible", "false");
 		scene.style.display = 'none';
-		fbxx.setAttribute("visible", "true");
+		
             
             alert("chien");
              
@@ -100,9 +97,11 @@
         
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
+		    let fbxx = document.querySelector('idfbx');
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     imageTrue.setAttribute('visible', true);
+		fbxx.setAttribute('visible', true);
                     
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                   
