@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -224,4 +224,41 @@
     </script>
 </body>
 
+</html>
+ -->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="inflate.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+        <a-sky color="#6EBAA7"></a-sky> 
+            <a-entity id="animationPlayer" scale="0.012 0.012 0.012" fbx-model="src: kick.fbx" animation-mixer="clip: *;loop: repeat; repetitions: 2;"></a-entity>
+            <a-entity position="0 1.5 3.5"><a-camera></a-camera></a-entity>
+            <a-box id="play_again" position="0 3 -1" height=0.5 depth=0.09 visible="false" color="red"></a-box>
+            <a-text value="Play again" position="-0.53 3 -0.95"></a-text>
+        </a-scene>
+        <script>
+          let button = document.querySelector("#play_again");
+let player = document.querySelector("#animationPlayer");
+button.addEventListener('click',function(){
+  //hide the button
+  button.setAttribute('visible','false');
+
+  //add the event listener to handle post animation before starting animations 
+  (use once to help with cleanup)
+  player.addEventListener('animation-finished',function() {
+    button.setAttribute('visible','true');
+    player.removeAttribute('animation-mixer');
+  },{once:true});
+
+  //start the animation by appending the animation-mixer
+  player.addAttribute('animation-mixer',{clip: "*",loop: "repeat", repetitions: 2});
+});
+        </script>
+    </body>
 </html>
