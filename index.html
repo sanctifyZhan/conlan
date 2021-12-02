@@ -74,7 +74,7 @@
         </div>
 
     <script>
-      
+      $('#containermusic').hide();
         
           var scene = document.querySelector('#containermusic');
 	  
@@ -94,11 +94,13 @@
         
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
+		     let scene = document.querySelector('#containermusic');
 		   let fbxid = document.querySelector("#idfbx");
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     imageTrue.setAttribute('visible', true);
 			fbxid.setAttribute('visible', true);
+			scene.style.display = 'show';
 		
                     
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
