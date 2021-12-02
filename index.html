@@ -52,7 +52,7 @@
 		
         </a-marker>
 	    
-	    <a-entity id="idfbx" position="-0.2 -1 -5.5" scale=".2 .2 .2" fbx-model="src: position_model_normal.fbx;"  visible="false" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
+	    <a-entity id="idfbx" position="-0.2 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;"  visible="false" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
         	    
 	    <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">   </a-image>
         
@@ -62,10 +62,10 @@
             <img id="my-image2"src="2.png">
         </a-assets>
         
-         <a-entity id="animationPlayer" position="-0.2 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx" animation-mixer="clip: *;loop: repeat; repetitions: 2;"></a-entity>
+         <a-entity id="animationPlayer" position="-0.2 -2 -5.5" scale=".2 .2 .2" fbx-model="src: position_model_normal.fbx" animation-mixer="clip: *;loop: repeat; repetitions: 2;"></a-entity>
            
-            <a-box id="play_again" position="0 3 -1" height=0.5 depth=0.09 visible="true" color="red"></a-box>
-            <a-text value="Play again" position="-0.53 3 -0.95"></a-text>
+            <a-box id="play_again" position="0 3 -1" height=0.5 depth=0.09 visible="false" color="red"></a-box>
+            <a-text value="Play again" position="0 2 --2"></a-text>
         
          
             
