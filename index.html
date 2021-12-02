@@ -62,7 +62,7 @@
             <img id="my-image2"src="2.png">
         </a-assets>
         
-         <a-entity id="animationPlayer" position="-0.2 -2 -5.5" scale=".2 .2 .2" fbx-model="src: position_model_normal.fbx" animation-mixer="clip: *;loop: repeat; repetitions: 2;"></a-entity>
+         <a-entity id="animationPlayer" position="-0.2 -1 -5.5" scale=".5 .5 .5" fbx-model="src: 1M_BOX_ANI.fbx" animation-mixer="clip: *;loop: repeat; repetitions: 2;"></a-entity>
            
             
 	    <a-box id="play_again" position="0 0 -3" height=0.5 depth=0.09 visible="true" color="blue"></a-box>
@@ -88,7 +88,7 @@ button.addEventListener('click',function(){
   button.setAttribute('visible','false');
 
   //add the event listener to handle post animation before starting animations 
-  (use once to help with cleanup)
+  
   player.addEventListener('animation-finished',function() {
     button.setAttribute('visible','true');
     player.removeAttribute('animation-mixer');
