@@ -16,10 +16,6 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
- 
-    <script src="js/aframe-extras.min.js"></script>
-
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    
     <style>
        .uimusic {
@@ -83,9 +79,6 @@
              
         });
     
-        
-     
-        
        // var playthisvid_1 = document.querySelector('#aimage2');
 
        // playthisvid_1.addEventListener('click', () => { console.log("it clicks");  })
@@ -95,9 +88,7 @@
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     imageTrue.setAttribute('visible', true);
-                    
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
-                  
                 }
             }
         });
