@@ -49,6 +49,12 @@
         
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
+		 <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">
+			 
+		<a-entity id="idfbx" position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;"  visible="false" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
+
+        </a-image>
+		
         </a-marker>
         
         <a-entity camera position="0 0 0"></a-entity>
@@ -57,14 +63,12 @@
             <img id="my-image2"src="2.png">
         </a-assets>
         
-          <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="true" height="0.15" width="0.4">
-        </a-image>
+         
             
              <a-video id="aVideoHide" src="#vid" position="0 0 0" visible="true" rotation="-90 0 0" height="3px" width="3px"
                 material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         
-           <a-entity position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal_v3.fbx;" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
-
+        
     </a-scene>
     <div class="uimusic" id="containermusic">
         </div>
@@ -73,11 +77,12 @@
       
         
           var scene = document.querySelector('#containermusic');
- 
+	  var fbxx = document.querySelector('#idfbx');
         scene.addEventListener("click", function (e) {
           let myEl = document.querySelector("#aimage2");
             myEl.setAttribute("visible", "false");
 		scene.style.display = 'none';
+		fbxx.setAttribute("visible", "true");
             
             alert("chien");
              
