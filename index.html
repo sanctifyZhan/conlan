@@ -16,6 +16,17 @@
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="inflate.min.js"></script>
+	<script>
+  AFRAME.registerComponent('plane', {
+    init: function () {
+      const material = this.el.getObject3D('mesh').material;
+
+      material.colorWrite = false;
+
+      console.log(material);
+    }
+  });
+</script>
 	
 	
 	
@@ -43,6 +54,14 @@
     <a-scene embedded="true" arjs='debugUIEnabled:false; trackingMethod: best;'
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
+	    
+	    <a-plane
+    plane
+    color="blue"
+    width="99"
+    height="1.2"
+    position="0 -1 -5"
+  ></a-plane>
         
          <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
         </video>
