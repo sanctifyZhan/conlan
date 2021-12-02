@@ -41,18 +41,20 @@
         
          <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
         </video>
+      <a-assets>
+            <img id="my-image2"src="2.png">
+        </a-assets>
         
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
         </a-marker>
      
-        <a-entity fbx-model="src: position_model_normal.fbx;" position="0 0 -1" scale=".5 .5 .5" shadow="receive: true; cast: true"></a-entity>
+       
+     <a-entity scale="0.5 0.5 0.5" fbx-model="src:position_model_normal.fbx);"> </a-entity>
      
         <a-entity camera position="0 0 1"></a-entity>
        
-         <a-assets>
-            <img id="my-image2"src="2.png">
-        </a-assets>
+        
         
           <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.45 -0.45" visible="true" height="0.2" width="0.6">
         </a-image>
