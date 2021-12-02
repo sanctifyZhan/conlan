@@ -78,7 +78,15 @@
         
           var scene = document.querySelector('#containermusic');
 	  
-     
+         scene.addEventListener("click", function (e) {
+          let myEl = document.querySelector("#aimage2");
+            myEl.setAttribute("visible", "false");
+		  $('#containermusic').hide();
+		scene.style.display = 'none';
+            
+            alert("chien");
+             
+        });
      
         
         
@@ -94,22 +102,14 @@
 		
                     
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
-                  $('#containermusic').hide();
-			imageTrue.setAttribute('visible', false);
-			fbxid.setAttribute('visible', false);
+                //  $('#containermusic').hide();
+		//	imageTrue.setAttribute('visible', false);
+		//	fbxid.setAttribute('visible', false);
                 }
             }
         });
 	    
-	       scene.addEventListener("click", function (e) {
-          let myEl = document.querySelector("#aimage2");
-            myEl.setAttribute("visible", "false");
-		  $('#containermusic').hide();
-		//scene.style.display = 'none';
-            
-            alert("chien");
-             
-        });
+	   
     
         
     
