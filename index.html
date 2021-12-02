@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="aframe-extras.min.js"></script>
    
     <style>
        .uimusic {
@@ -46,8 +46,9 @@
         <a-marker type='pattern' url='patter.patt' markerhandler>
             
         </a-marker>
-     
-       <a-entity fbx-model="src: position_model_normal.fbx;" position="0 0 -1" scale="1 1 1"></a-entity>
+    
+	    
+	<a-entity position="0 0 -1" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
 			
         <a-entity camera position="0 0 0"></a-entity>
        
