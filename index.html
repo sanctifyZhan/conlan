@@ -14,7 +14,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+	
+	  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="inflate.min.js"></script>
     
     <style>
@@ -35,6 +37,7 @@
     init: function () {
       const material = this.el.getObject3D('mesh').material;
      // material.colorWrite = false;
+	    //    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     }
   });
 </script>
@@ -54,8 +57,9 @@
 	    
 	       <a-assets>
             <img id="my-image2"src="2.png">
+		 <a-asset-item id="thufbx" response-type="arraybuffer" src="omikuji_aniani.fbx"></a-asset-item>
 		 <a-asset-item id="thu" response-type="arraybuffer" src="omikuji_aniani.glb"></a-asset-item>
-		       <a-asset-item id="thufbx" src="omikuji_aniani.fbx"></a-asset-item>
+		      
         </a-assets>
         
         
@@ -67,11 +71,13 @@
 		
         </a-marker>
 	    
+	    <a-entity id="thuthatfbx" position="0 -1.3 -3.5" gltf-model="#thufbx"></a-entity>
+	    
    <a-entity id="idfbx" position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;"  visible="false" shadow="receive: true; cast: true"></a-entity>
 	
    <a-entity id="thuthat" position="0 -1.3 -2.5" scale=".9 .9 .9" gltf-model="#thu" visible="true" animation-mixer="clip:aniu;loop:2"></a-entity>
 	    
-	    <a-entity id="thuthatfbx" position="0 -1.3 -3.5" scale=".9 .9 .9" gltf-model="#thufbx"></a-entity>
+	    
 	    
 	<a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">   </a-image>
         
