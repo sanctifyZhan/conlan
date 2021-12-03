@@ -106,14 +106,14 @@
             myEl.setAttribute("visible", "false");
 		  $('#containermusic').hide();
 		scene.style.display = 'none';
-            
-             player.addEventListener('animation-finished',function() {
+            player.addAttribute('animation-mixer',{clip: "*"});
+          //   player.addEventListener('animation-finished',function() {
    
-    player.removeAttribute('animation-mixer');
-  },{once:true});
+ //   player.removeAttribute('animation-mixer');
+  //},{once:true});
 
   //start the animation by appending the animation-mixer
-  player.addAttribute('animation-mixer',{clip: "*"});
+ // player.addAttribute('animation-mixer',{clip: "*"});
 		 
              
         });
