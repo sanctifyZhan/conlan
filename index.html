@@ -15,11 +15,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="inflate.min.js"></script>
-
-	
-	
     
     <style>
        .uimusic {
@@ -29,39 +25,38 @@
         right: 4%;
         width: 90%;
         height: 18%;
-       
         box-sizing: border-box;
-          
-    }
+      }
     </style>
+	
 </head>
-    	<script>
+ <script>
   AFRAME.registerComponent('plane', {
     init: function () {
       const material = this.el.getObject3D('mesh').material;
-
      // material.colorWrite = false;
-
     }
   });
 </script>
 	
-
-    
-
-
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded="true" arjs='debugUIEnabled:false; trackingMethod: best;'
         device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false" loading-screen="enabled:false"
         precision: mediump>
 	    
-	    <a-plane
+ <a-plane
     plane
     color="blue"
     width="0.5"
     height="1"
     position="0 4 -2"
   ></a-plane>
+	    
+	       <a-assets>
+            <img id="my-image2"src="2.png">
+		 <a-asset-item id="thu" response-type="arraybuffer" src="omikuji_aniani.fbx;"></a-asset-item>
+        </a-assets>
+        
         
          <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
         </video>
@@ -71,19 +66,15 @@
 		
         </a-marker>
 	    
-	    <a-entity id="idfbx" position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;"  visible="false" shadow="receive: true; cast: true"></a-entity>
+   <a-entity id="idfbx" position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;"  visible="false" shadow="receive: true; cast: true"></a-entity>
 	
-	 
-   <a-entity id="idfbx2" position="0 0 -2" scale="1 1 1" fbx-model="src: omikuji_aniani.glb;" visible="true" animation-mixer="clip:ani"></a-entity>
+   <a-entity position="0 0 -2" scale="1 1 1" gltf-model="#thu" visible="true"></a-entity>
 	    
-	    <a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">   </a-image>
+	<a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">   </a-image>
         
         <a-entity camera position="0 0 0"></a-entity>
        
-         <a-assets>
-            <img id="my-image2"src="2.png">
-        </a-assets>
-        
+      
          
             
              <a-video id="aVideoHide" src="#vid" position="0 0 0" visible="true" rotation="-90 0 0" height="3px" width="3px"
