@@ -122,13 +122,13 @@
 	  
          scene.addEventListener("click", function (e) {
 		  
-		 let imageTrue = document.querySelector("#aimage");
+		 let imageTrue1 = document.getElementsByTagName("a-image")[1];
 		 let audio = new Audio('captureSound.mp3');
 	  let player = document.querySelector("#thuthatfbx");
           let myEl = document.querySelector("#aimage2");
 		  audio.play();
-		  imageTrue.setAttribute('visible', true);
-		  sceneElement.classList.add("overlay");
+		  imageTrue1.setAttribute('visible', true);
+		 
             myEl.setAttribute("visible", "false");
 		  $('#containermusic').hide();
 		scene.style.display = 'none';
@@ -136,7 +136,8 @@
 		 player.setAttribute('animation-mixer',{clip: "*",loop: "repeat", repetitions: 1});
 		  player.addEventListener('animation-finished',function() {
     alert("end");
-		//	  choosePic();
+			  choosePic();
+			   sceneElement.classList.add("overlay");
   });
 		 
 		 
