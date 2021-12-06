@@ -100,6 +100,8 @@
         
           var scene = document.querySelector('#containermusic');
 	    let player = document.querySelector("#thuthatfbx");
+	     let myPix = new Array("Assets/01.jpg", "Assets/02.jpg", "Assets/03.jpg", "Assets/04.jpg", "Assets/05.jpg", "Assets/06.jpg", "Assets/07.jpg", "Assets/08.jpg", "Assets/09.jpg", "Assets/10.jpg", "Assets/11.jpg", "Assets/12.jpg");
+      
 	  
          scene.addEventListener("click", function (e) {
 	  let player = document.querySelector("#thuthatfbx");
@@ -111,6 +113,7 @@
 		 player.setAttribute('animation-mixer',{clip: "*",loop: "repeat", repetitions: 1});
 		  player.addEventListener('animation-finished',function() {
     alert("end");
+			  choosePic();
   });
 		 
 		 
@@ -149,7 +152,10 @@
 	    
 	   
     
-        
+         function choosePic() {
+            let randomNum = Math.floor(Math.random() * myPix.length);
+            document.getElementById("my-image").src = myPix[randomNum];
+        }
     
     </script>
 </body>
