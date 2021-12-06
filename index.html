@@ -97,7 +97,7 @@
 	    
 	    
 	<a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">   </a-image>
-	<a-image src="#my-image" id="aimage" position="-0.005 0.05 -0.95" visible="false" height="0.9" width="1">       </a-image>
+	<a-image src="#my-image" id="aimage" position="-0.005 0.05 -0.1" visible="false" height="0.9" width="1">       </a-image>
         
         <a-entity camera position="0 0 0"></a-entity>
        
@@ -114,6 +114,11 @@
 
     <script>
       $('#containermusic').hide();
+	    
+	     let audio = new Audio('captureSound.mp3');
+	  let player = document.querySelector("#thuthatfbx");
+          let myEl = document.querySelector("#aimage2");
+	    
         let sceneElement = document.querySelector("a-scene");
           var scene = document.querySelector('#containermusic');
 	    let player = document.querySelector("#thuthatfbx");
@@ -126,9 +131,7 @@
          scene.addEventListener("click", function (e) {
 		  
 		
-		 let audio = new Audio('captureSound.mp3');
-	  let player = document.querySelector("#thuthatfbx");
-          let myEl = document.querySelector("#aimage2");
+		
 		  audio.play();
 		 
 		 
