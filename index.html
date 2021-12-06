@@ -107,6 +107,8 @@
       
 	  
          scene.addEventListener("click", function (e) {
+		  let imageTrue = document.getElementsByTagName("a-image")[0];
+		 imageTrue.setAttribute('visible', true);
 		 let audio = new Audio('captureSound.mp3');
 	  let player = document.querySelector("#thuthatfbx");
           let myEl = document.querySelector("#aimage2");
