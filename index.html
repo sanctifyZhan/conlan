@@ -20,6 +20,25 @@
     <script src="inflate.min.js"></script>
     
     <style>
+	       .overlay {
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("backgroundWhile.PNG");
+            /*   background-color:#ffffff; Black background with opacity */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
        .uimusic {
         position: absolute;
         z-index: 100;
@@ -60,7 +79,8 @@
           	 <img id="my-image2"src="2.png">
 		 <a-asset-item id="thu" response-type="arraybuffer" src="omikuji_aniani.glb"></a-asset-item>
 	 </a-assets>
-	    
+	    <a-image src="#my-image" id="aimage" position="0 0 -0.45" visible="false" height="0.9" width="1.2">
+        </a-image>
 	    
         
         
@@ -100,12 +120,14 @@
       
 	  
          scene.addEventListener("click", function (e) {
-		  let imageTrue = document.getElementsByTagName("a-image")[0];
-		// imageTrue.setAttribute('visible', true);
+		  
+		 let imageTrue = document.querySelector("#aimage");
 		 let audio = new Audio('captureSound.mp3');
 	  let player = document.querySelector("#thuthatfbx");
           let myEl = document.querySelector("#aimage2");
 		  audio.play();
+		  imageTrue.setAttribute('visible', true);
+		  sceneElement.classList.add("overlay");
             myEl.setAttribute("visible", "false");
 		  $('#containermusic').hide();
 		scene.style.display = 'none';
