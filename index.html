@@ -116,8 +116,7 @@
       $('#containermusic').hide();
 	    
 	     let audio = new Audio('captureSound.mp3');
-	  let player = document.querySelector("#thuthatfbx");
-          let myEl = document.querySelector("#aimage2");
+	
 	    
         let sceneElement = document.querySelector("a-scene");
           var scene = document.querySelector('#containermusic');
@@ -130,7 +129,8 @@
 	  
          scene.addEventListener("click", function (e) {
 		  
-		
+		  let player = document.querySelector("#thuthatfbx");
+          let myEl = document.querySelector("#aimage2");
 		
 		  audio.play();
 		 
