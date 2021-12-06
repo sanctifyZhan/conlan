@@ -114,7 +114,7 @@
 
     <script>
       $('#containermusic').hide();
-        
+        let sceneElement = document.querySelector("a-scene");
           var scene = document.querySelector('#containermusic');
 	    let player = document.querySelector("#thuthatfbx");
 	     let myPix = new Array("Assets/01.jpg", "Assets/02.jpg", "Assets/03.jpg", "Assets/04.jpg", "Assets/05.jpg", "Assets/06.jpg", "Assets/07.jpg", "Assets/08.jpg", "Assets/09.jpg", "Assets/10.jpg", "Assets/11.jpg", "Assets/12.jpg");
@@ -122,12 +122,12 @@
 	  
          scene.addEventListener("click", function (e) {
 		  
-		// let imageTrue1 = document.getElementsByTagName("a-image")[1];
+		 let imageTrue1 = document.getElementsByTagName("a-image")[1];
 		 let audio = new Audio('captureSound.mp3');
 	  let player = document.querySelector("#thuthatfbx");
           let myEl = document.querySelector("#aimage2");
 		  audio.play();
-		//  imageTrue1.setAttribute('visible', true);
+		  imageTrue1.setAttribute('visible', true);
 		 
             myEl.setAttribute("visible", "false");
 		  $('#containermusic').hide();
