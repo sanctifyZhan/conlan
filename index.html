@@ -88,7 +88,7 @@
         
         <a-marker type='pattern' url='patter.patt' markerhandler> </a-marker>
 
-  <a-entity id="thuthatfbx" position="-0.38 -0.12 -1.6" scale=".1 .1 .1" fbx-model="src: 1M_BOX_ANI.fbx;" visible="false" shadow="receive: true; cast: true" animation-mixer="clip:anii"></a-entity>
+  <a-entity id="thuthatfbx" position="0 -0.12 -1.6" scale=".1 .1 .1" fbx-model="src: 1M_BOX_ANI.fbx;" visible="false" shadow="receive: true; cast: true" animation-mixer="clip:anii"></a-entity>
 			  
    <a-entity id="idfbx" position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;" visible="false" shadow="receive: true; cast: true"></a-entity>
 	
@@ -169,8 +169,8 @@
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     imageTrue.setAttribute('visible', true);
-			fbxid.setAttribute('visible', true);
-			thungvuong.setAttribute('visible', true);
+			//fbxid.setAttribute('visible', true);
+			//thungvuong.setAttribute('visible', true);
 			$('#containermusic').show();
 		
                     
