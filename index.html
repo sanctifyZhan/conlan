@@ -90,11 +90,11 @@
 	    
 	     <a-entity id="thuthatfbx" position="0 0 -0.749" scale=".1 .1 .1" fbx-model="src: 1M_BOX_ANI.fbx;" visible="false" shadow="receive: true; cast: true" animation-mixer="clip:anii"></a-entity>
 	  
-	     <a-entity id="idfbx" position="0 0 -5.5" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;" visible="false" shadow="receive: true; cast: true"></a-entity>
-	
+	    
 	    </a-marker>
 
- 			  
+ 		 <a-entity id="idfbx" position="0 0 -0.749" scale=".5 .5 .5" fbx-model="src: position_model_normal.fbx;" visible="true" shadow="receive: true; cast: true"></a-entity>
+		  
  
 	
    <a-entity id="thuthat" position="0 -0.3 -2.5" scale=".9 .9 .9" fbx-model="#thu" visible="true" animation-mixer="clip:aniu"></a-entity>
@@ -120,7 +120,7 @@
     <script>
       $('#containermusic').hide();
 	    
-	     let audio = new Audio('captureSound.mp3');
+	  //   let audio = new Audio('captureSound.mp3');
 	
 	    
         let sceneElement = document.querySelector("a-scene");
@@ -137,7 +137,7 @@
 		  let player = document.querySelector("#thuthatfbx");
           let myEl = document.querySelector("#aimage2");
 		
-		  audio.play();
+	//	  audio.play();
 		 
 		 
             myEl.setAttribute("visible", "false");
@@ -172,11 +172,11 @@
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
 		   let thungvuong = document.querySelector("#thuthatfbx");
-		   let fbxid = document.querySelector("#idfbx");
+		//   let fbxid = document.querySelector("#idfbx");
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     imageTrue.setAttribute('visible', true);
-			fbxid.setAttribute('visible', true);
+			//fbxid.setAttribute('visible', true);
 			thungvuong.setAttribute('visible', true);
 			$('#containermusic').show();
 		
