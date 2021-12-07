@@ -82,7 +82,8 @@
           	 <img id="my-image2"src="2.png">
 		   <img id="my-image">
 		 <a-asset-item id="thu" response-type="arraybuffer" src="omikuji_aniani.fbx"></a-asset-item>
-		    
+		    <a-asset-item id="gltf-omikuji" src="glTF/omikuji_ani.gltf"></a-asset-item>
+
 	 </a-assets>
 	   
 	    
@@ -101,7 +102,7 @@
 		
  		  
   
-	<a-entity id="animtest2" position="0 0 -0.9" scale="1 1 1" gltf-model="src: omikuji_ani.gltf;" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
+	<a-entity id="animtest2" position="0 0 -0.9" scale="1 1 1" gltf-model="#gltf-omikuji;" shadow="receive: true; cast: true" animation-mixer="clip:*"></a-entity>
 	
 	
    <a-entity id="thuthat" position="0 -0.3 -2.5" scale=".9 .9 .9" fbx-model="#thu" visible="true" animation-mixer="clip:aniu"></a-entity>
