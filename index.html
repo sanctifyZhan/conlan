@@ -145,8 +145,9 @@
 		 
 		 
             myEl.setAttribute("visible", "false");
+		 myEl.setAttribute('position', '-15 -15 9');
 		  $('#containermusic').hide();
-		//scene.style.display = 'none';
+		scene.style.display = 'none';
         
 		 player.setAttribute('animation-mixer',{clip: "*",loop: "repeat", repetitions: 1});
 		  player.addEventListener('animation-finished',function() {
