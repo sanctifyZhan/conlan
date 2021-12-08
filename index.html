@@ -152,12 +152,12 @@
 		 player.setAttribute('animation-mixer',{clip: "*",loop: "repeat", repetitions: 1});
 		  player.addEventListener('animation-finished',function() {
 			   let imageTrue1 = document.getElementsByTagName("a-image")[1];
-			 //  let thungvuong = document.querySelector("#thuthatfbx");
+			   let thungvuong = document.querySelector("#thuthatfbx");
 			   imageTrue1.setAttribute('visible', true);
    			  //alert("end");
 			   choosePic();
 			   //sceneElement.classList.add("overlay");
-			//  thungvuong.setAttribute('visible', false);
+			  thungvuong.setAttribute('position', '-15 -15 9');
   });
 		 
 		 
