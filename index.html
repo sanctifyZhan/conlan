@@ -175,13 +175,13 @@
         
            AFRAME.registerComponent('markerhandler', {
             tick: function () {
-		   let thungvuong = document.querySelector("#thuthatfbx");
+		//   let thungvuong = document.querySelector("#thuthatfbx");
 		   let fbxid = document.querySelector("#idfbx");
                  let imageTrue = document.getElementsByTagName("a-image")[0];
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     imageTrue.setAttribute('visible', true);
 			fbxid.setAttribute('visible', true);
-			thungvuong.setAttribute('visible', true);
+		//	thungvuong.setAttribute('visible', true);
 			$('#containermusic').show();
 		
                     
