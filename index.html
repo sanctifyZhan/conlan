@@ -108,7 +108,11 @@
 	<a-image clickhandler src="#my-image2" id="aimage2" position="0 -0.3 -1" visible="false" height="0.15" width="0.4">   </a-image>
 	<a-image src="#my-image" id="aimage" position="-0.005 0.02 -0.95" visible="false" height="0.6" width="0.4">       </a-image>
         
-        <a-entity camera position="0 0 0"></a-entity>
+        <a-entity id="rig" position="0 0 0">
+				<a-entity id="camera" camera="fov: 60; far: 5000; near: 0.001" look-controls wasd-controls="acceleration: 10" cursor-visible="true" position="0 0 0" rotation="0 0 0">
+					<!-- cursor -->
+					</a-entity>
+			</a-entity>
        
       
          
